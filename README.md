@@ -1,6 +1,6 @@
 # ML Perceptron Project (Extended)
 
-This repository now includes:
+This includes:
 
 - a single-layer perceptron from scratch,
 - configurable training components (activation, loss, optimizer, regularization),
