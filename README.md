@@ -76,15 +76,9 @@ ML-Perceptron-Project-main/
 ├── perceptron_from_scratch.py
 └── financial_model_benchmark.py
 
-## How To Run
-
-### A) Run from-scratch perceptron + MLP demos
-
-```bash
-python3 perceptron_from_scratch.py
 ```
 
-### B) Run financial benchmark (auto source selection)
+###  Run financial benchmark (auto source selection)
 
 ```bash
 python3 financial_model_benchmark.py
@@ -92,7 +86,7 @@ python3 financial_model_benchmark.py
 
 If online download is unavailable, it will automatically fall back to synthetic financial-like data.
 
-### C) Run financial benchmark with your own local CSV
+###  Run financial benchmark with your own local CSV
 
 ```bash
 python3 financial_model_benchmark.py \
