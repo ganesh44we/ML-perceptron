@@ -65,10 +65,16 @@ This repository now includes:
 
 ## Project Structure
 
-- `Perceptron_Algorithm_Implementation.ipynb`: original notebook from repository
-- `perceptron_from_scratch.py`: single-layer + MLP implementations and demos
-- `financial_model_benchmark.py`: financial tuning and model comparison pipeline
-- `requirements.txt`: original dependency file
+```text
+ML-Perceptron-Project-main/
+├── .gitignore
+├── LICENSE
+├── README.md
+├── requirements.txt
+├── Perceptron_Algorithm.pdf
+├── Perceptron_Algorithm_Implementation.ipynb
+├── perceptron_from_scratch.py
+└── financial_model_benchmark.py
 
 ## How To Run
 
