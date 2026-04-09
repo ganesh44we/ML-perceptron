@@ -101,6 +101,46 @@ python3 financial_model_benchmark.py \
 
 You can map to lowercase/custom column names by changing the CLI flags.
 
+## Single-Layer Perceptron: Test Cases
+
+| # | Domain    | Test Case / Input               | Expected | Predicted | Status |
+|---|-----------|----------------------------------|----------|-----------|--------|
+| 1 | Gate      | AND: (0, 0)                      | 0        | 0         | Pass   |
+| 2 | Gate      | AND: (1, 1)                      | 1        | 1         | Pass   |
+| 3 | Gate      | OR: (0, 1)                       | 1        | 1         | Pass   |
+| 4 | Gate      | OR: (0, 0)                       | 0        | 0         | Pass   |
+| 5 | Gate      | NAND: (1, 1)                     | 0        | 0         | Pass   |
+| 6 | Gate      | NOR: (0, 0)                      | 1        | 1         | Pass   |
+| 7 | Gate      | XOR: (0, 0)                      | 0        | 1         | **Fail** |
+| 8 | Gate      | XOR: (1, 1)                      | 0        | 1         | **Fail** |
+| 9 | Synthetic | Classification sample #1         | 1        | 1         | Pass   |
+|10 | Financial | Next-day direction (window B)    | 0        | 1         | **Fail** |
+
+### Single-Layer Summary
+- Strong on linearly separable patterns (AND/OR/NAND/NOR).
+- Fails on non-linearly separable XOR.
+- Can underperform on harder financial directional cases.
+
+## Multi-Layer Perceptron (MLP): Test Cases
+
+| # | Domain    | Test Case / Input               | Expected | Predicted | Status |
+|---|-----------|----------------------------------|----------|-----------|--------|
+| 1 | Gate      | AND: (0, 0)                      | 0        | 0         | Pass   |
+| 2 | Gate      | AND: (1, 1)                      | 1        | 1         | Pass   |
+| 3 | Gate      | OR: (0, 1)                       | 1        | 1         | Pass   |
+| 4 | Gate      | OR: (0, 0)                       | 0        | 0         | Pass   |
+| 5 | Gate      | NAND: (1, 1)                     | 0        | 0         | Pass   |
+| 6 | Gate      | NOR: (0, 0)                      | 1        | 1         | Pass   |
+| 7 | Gate      | XOR: (0, 0)                      | 0        | 0         | Pass   |
+| 8 | Gate      | XOR: (1, 1)                      | 0        | 0         | Pass   |
+| 9 | Synthetic | Classification sample #1         | 1        | 1         | Pass   |
+|10 | Financial | Next-day direction (window B)    | 0        | 0         | Pass   |
+
+### MLP Summary
+- Learns both linear and non-linear boundaries.
+- Correctly solves XOR.
+- More robust than single-layer perceptron on complex patterns.
+
 ## Notes
 
 - Financial directional prediction is a difficult task; moderate metrics can still be realistic.
